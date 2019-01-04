@@ -1,0 +1,30 @@
+{
+  "name": "appacademy-slack-saved-links",
+  "version": "1.0.0",
+  "description": "This repo pulls Slack conversations daily and saves and links it finds!",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niartenyaw/appacademy-slack-saved-links.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niartenyaw/appacademy-slack-saved-links/issues"
+  },
+  "homepage": "https://github.com/niartenyaw/appacademy-slack-saved-links#readme",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
+  }
+}
