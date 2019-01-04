@@ -6,8 +6,11 @@ import MessageList from './MessageList'
 export default class Root extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      currentChannel: this.props.channels[0],
+    };
   }
+
   componentDidMount() {
     this.props.channels.forEach(channel => {
       const fileLocation = `https://raw.githubusercontent.com/niartenyaw/appacademy-slack-saved-links/master/histories/${channel}.json`;
@@ -20,8 +23,13 @@ export default class Root extends React.Component {
   }
 
   render() {
+    const liveMessages = this.state[this.state.currentChannel] || {};
+    console.log(liveMessages)
     return (
-      <div>Hello!</div>
+      <>
+        <SideNav channels={this.props.channels} />
+        <MessageList messages={ Object.values(liveMessages) } />
+      </>
     );
   }
 };
