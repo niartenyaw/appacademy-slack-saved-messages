@@ -249,7 +249,7 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SideNav__WEBPACK_IMPORTED_MODULE_1__["default"], {
         channels: this.props.channels
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MessageList__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        messages: Object.values(liveMessages)
+        messages: Object.values(liveMessages).reverse()
       }));
     }
   }]);

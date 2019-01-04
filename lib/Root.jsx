@@ -28,7 +28,7 @@ export default class Root extends React.Component {
     return (
       <>
         <SideNav channels={this.props.channels} />
-        <MessageList messages={ Object.values(liveMessages) } />
+        <MessageList messages={ Object.values(liveMessages).reverse() } />
       </>
     );
   }
