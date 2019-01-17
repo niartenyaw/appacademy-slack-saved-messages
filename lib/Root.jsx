@@ -22,12 +22,19 @@ export default class Root extends React.Component {
     });
   }
 
+  changeChannel(channel) {
+    this.setState({ currentChannel: channel })
+  }
+
   render() {
     const liveMessages = this.state[this.state.currentChannel] || {};
     console.log(liveMessages)
     return (
       <>
-        <SideNav channels={this.props.channels} />
+        <SideNav 
+          channels={this.props.channels}
+          changeChannel={this.changeChannel.bind(this)}
+        />
         <MessageList messages={ Object.values(liveMessages).reverse() } />
       </>
     );

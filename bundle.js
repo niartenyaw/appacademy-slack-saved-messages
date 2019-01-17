@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.querySelector('#root');
-  var channels = ['ethics'];
+  var channels = ['ethics', 'effective-altruism'];
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib_Root__WEBPACK_IMPORTED_MODULE_2__["default"], {
     channels: channels
   }), root);
@@ -242,12 +242,20 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "changeChannel",
+    value: function changeChannel(channel) {
+      this.setState({
+        currentChannel: channel
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var liveMessages = this.state[this.state.currentChannel] || {};
       console.log(liveMessages);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_SideNav__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        channels: this.props.channels
+        channels: this.props.channels,
+        changeChannel: this.changeChannel.bind(this)
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MessageList__WEBPACK_IMPORTED_MODULE_2__["default"], {
         messages: Object.values(liveMessages).reverse()
       }));
@@ -274,8 +282,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  return null;
+/* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
+  var channels = _ref.channels,
+      changeChannel = _ref.changeChannel;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, channels.map(function (channel) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      onClick: function onClick() {
+        return changeChannel(channel);
+      }
+    }, channel);
+  }));
 });
 
 /***/ }),

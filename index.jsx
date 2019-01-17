@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const channels = [
     'ethics',
+    'effective-altruism'
   ];
 
   ReactDOM.render(<Root channels={channels} />, root);
