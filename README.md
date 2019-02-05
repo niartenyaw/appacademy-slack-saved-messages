@@ -1,4 +1,4 @@
-# App Academy Saved Links
+# App Academy Saved Messages
 
 This repo pulls Slack conversations daily and saves and links it finds!
 
